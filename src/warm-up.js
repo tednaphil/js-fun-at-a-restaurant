@@ -105,7 +105,7 @@ var groceryStore = [
 
 // Write the code to add the key of location, with the value of 'Denver, Colorado'. Use dot
 // notation to do this. DO NOT modify your code from above.
-groceryStore[0].location = 'Denver';
+groceryStore[0].location = 'Denver, Colorado';
 console.log(groceryStore[0])
 
-groceryStore[1].location = 'New Orleans';
+groceryStore[1].location = 'New Orleans, Louisiana';
