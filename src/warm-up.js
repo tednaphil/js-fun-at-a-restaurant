@@ -53,7 +53,7 @@ function countStock(count) {
         console.log(`We need to get some more ${food}`)
 }};
 
-countStock(2)
+countStock(2);
 
 
 
@@ -69,7 +69,7 @@ function nameFood() {
     }
 };
 
-console.log(nameFood());
+nameFood();
 
 
 //------------------------- Arrays -------------------------//
@@ -96,16 +96,14 @@ console.log(fruits[4])
 // Create a new variable called "groceryStore" and assign to it an object literal with two
 // keys: name, and isOpen. The value for name should the string 'King Soopers' (or your favorite grocery store), and
 // the value for isOpen should be true. Which other key value pairs would make sense to add to this object?
-var groceryStore = [
-    {name: 'King Soopers',
-    isOpen: true},
-    {name: 'Roberts',
-    isOpen: true}
-]
+var groceryStore = {
+    name: 'King Soopers',
+    isOpen: true,
+    hasPickup: false,
+    parkingSpots: 10
+}
 
 // Write the code to add the key of location, with the value of 'Denver, Colorado'. Use dot
 // notation to do this. DO NOT modify your code from above.
-groceryStore[0].location = 'Denver, Colorado';
-console.log(groceryStore[0])
-
-groceryStore[1].location = 'New Orleans, Louisiana';
+groceryStore.location = 'Denver, Colorado';
+console.log(groceryStore)
