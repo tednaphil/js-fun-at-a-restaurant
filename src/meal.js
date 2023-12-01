@@ -36,13 +36,27 @@ function formatPrice(priceInput) {
   return (`$${priceInput}`);
 }
 
+function decreasePrice(itemPrice) {
+  var percentageDecrease = itemPrice * .1;
+  // console.log (percentageDecrease);
+  return itemPrice - percentageDecrease
+}
+
+function createRecipe(title, ingredients, dishType) {
+  return {
+    title: title,
+    ingredients: ingredients,
+    type: dishType
+  }
+  }
+
 module.exports = {
   nameMenuItem,
   createMenuItem,
   addIngredients,
   formatPrice,
-  // decreasePrice,
-  // createRecipe
+  decreasePrice,
+  createRecipe
 }
 
 
