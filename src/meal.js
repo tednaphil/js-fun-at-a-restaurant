@@ -15,10 +15,21 @@ function createMenuItem(food, priceInput, typeInput) {
 
 // console.log(createMenuItem('soup', 10.99, 'lunch'))
 
+// var ingredients = [];
+function addIngredients(ingredientInput, array) {
+  console.log(ingredientInput, array)
+  array = array.push(ingredientInput);
+  console.log(array)
+  return array
+}
+
+
+
+
 module.exports = {
   nameMenuItem,
   createMenuItem,
-  // addIngredients,
+  addIngredients,
   // formatPrice,
   // decreasePrice,
   // createRecipe
