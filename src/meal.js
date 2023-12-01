@@ -17,20 +17,30 @@ function createMenuItem(food, priceInput, typeInput) {
 
 // var ingredients = [];
 function addIngredients(ingredientInput, array) {
-  console.log(ingredientInput, array)
+  // console.log(ingredientInput, array);
+  if (array.includes(ingredientInput)) {
+    return array
+  } else {
   array = array.push(ingredientInput);
-  console.log(array)
+  // console.log(array)
   return array
+  }}
+
+// if ingredientInput is strictly equal to any element in the array, 
+// don't add the item.
+//OR if ingredientInput is not strictly equal to any element in the array,
+// add the item.
+
+function formatPrice(priceInput) {
+  // console.log(priceInput);
+  return (`$${priceInput}`);
 }
-
-
-
 
 module.exports = {
   nameMenuItem,
   createMenuItem,
   addIngredients,
-  // formatPrice,
+  formatPrice,
   // decreasePrice,
   // createRecipe
 }
