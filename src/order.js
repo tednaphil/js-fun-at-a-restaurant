@@ -1,34 +1,47 @@
 function takeOrder(order, orderTypeList) {
   if (orderTypeList.length < 3) {
-  orderTypeList = orderTypeList.push(order);
-}}
+    orderTypeList = orderTypeList.push(order);
+  }
+};
 
 
 function refundOrder(orderNumber, orderArray) {
-//if orderNumber is strictly equal to orderArray[i].orderNumber, delete the object
-//from the array orderArray.
   for (var i = 0; i < orderArray.length; i++) {
-    console.log(orderArray[i].orderNumber);
     if (orderArray[i].orderNumber === orderNumber) {
-      console.log(`Remove order number ${orderNumber}`);
       orderArray.splice(i, 1);
-      console.log('New Array: ', orderArray);
     }
   }
-  // if (orderNumber === orderArray[i].orderNumber) {
-  //     orderArray.splice(i, i)
-  //     console.log(orderArray)
-  //   } else {
-  //     return orderArray
-  //   }
-  };
+};
 
 
 
-function listItems() {
+//NOTE: LINE 21 makes the test pass. How do I create this string
+//from the function? */
+// var itemList = 'burger, blt sandwich, rueben';
 
-}
 
+// itemList.push('burger');
+// console.log('first add to item list: ', itemList)
+
+// itemList.push('salmon');
+// console.log('second add to item list: ', itemList)
+
+// itemList.push()
+
+
+function listItems(orderArray) {
+  var itemList = []
+  for (var i = 0; i < orderArray.length; i++) {
+    console.log(orderArray[i].item);
+    itemList.push(orderArray[i].item);
+    //here we need to add the item name from each object to 
+    //a string, maybe via concatenation. The array that is being
+    //returned does not deeply equal the string in the test file.
+    var joinedList = itemList.join(', ')
+  } return joinedList
+};
+
+// console.log(itemList);
 
 function searchOrder() {
 
@@ -37,6 +50,6 @@ function searchOrder() {
 module.exports = {
   takeOrder,
   refundOrder,
-  // listItems,
+  listItems,
   // searchOrder
 }
