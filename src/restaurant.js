@@ -1,3 +1,19 @@
+function createRestaurant() {
+
+};
+
+function addMenuItem() {
+
+};
+
+function removeMenuItem() {
+
+};
+
+function checkForFood() {
+
+};
+
 
 
 module.exports = {
