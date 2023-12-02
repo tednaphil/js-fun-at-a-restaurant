@@ -1,7 +1,4 @@
 function createRestaurant(restaurantName) {
-//create an object to be stored in the variable defined in the test.
-//the object should include the keys name and menus (menus key
-//should hold an object with the keys breakfast, lunch, and dinner)
   return {
     name: restaurantName,
     menus: {
@@ -12,11 +9,22 @@ function createRestaurant(restaurantName) {
   }; 
 };
 
-// console.log('Pizza restaurant name: ', restaurantName.name);
-// console.log(createRestaurant('Sexy Pizza'));
 
-function addMenuItem() {
+function addMenuItem(restaurant, menuItem) {
+  // console.log(restaurant.menus);
+  // console.log(menuItem.type);
+  // console.log(restaurant.menus.lunch);
+  // console.log(restaurant.menus.lunch.includes(menuItem));
 
+  if (menuItem.type === 'lunch' && restaurant.menus.lunch.includes(menuItem) === false) { //is not present in the menus.lunch array// 
+    restaurant.menus.lunch.push(menuItem);
+  }
+  if (menuItem.type === 'breakfast' && restaurant.menus.breakfast.includes(menuItem) === false) {
+    restaurant.menus.breakfast.push(menuItem)
+  }
+  if (menuItem.type === 'dinner' && restaurant.menus.dinner.includes(menuItem) === false) {
+    restaurant.menus.dinner.push(menuItem)
+  };
 };
 
 function removeMenuItem() {
@@ -31,7 +39,7 @@ function checkForFood() {
 
 module.exports = {
   createRestaurant, 
-  // addMenuItem,
+  addMenuItem,
   // removeMenuItem,
   // checkForFood
 }
