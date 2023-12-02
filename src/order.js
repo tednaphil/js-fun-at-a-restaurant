@@ -32,7 +32,6 @@ function refundOrder(orderNumber, orderArray) {
 function listItems(orderArray) {
   var itemList = []
   for (var i = 0; i < orderArray.length; i++) {
-    console.log(orderArray[i].item);
     itemList.push(orderArray[i].item);
     //here we need to add the item name from each object to 
     //a string, maybe via concatenation. The array that is being
@@ -43,13 +42,42 @@ function listItems(orderArray) {
 
 // console.log(itemList);
 
-function searchOrder() {
 
+function searchOrder(orderArray, item) {
+//this function will check the contents of the objects in the orderArray
+// and if the argument passed is present as a value in any of the objects
+// in the orderArray array,
+//return the boolean true
+// orderArray.find((orderArray[i].item) === item
+  var x = orderArray.find(function isInOrder(order){
+    return  order.item === item;
+  })
+if (x === undefined) {
+  return false
+} else {
+  return true
 }
+};
+
+
+
+
+// for (var i = 0; i < orderArray.length; i++) {
+  //   if (orderArray[i].item === item) {
+  //     console.log('In order list: ', orderArray[i].item);
+  //     // return true
+  //   }
+  //   else if (orderArray[i] !== item) {
+  //     console.log('Not in order list: ', orderArray[i].item);
+  //     // return false
+  //   }
+//     // console.log('Order Item: ', orderArray[i].item)
+//   // }
+// };
 
 module.exports = {
   takeOrder,
   refundOrder,
   listItems,
-  // searchOrder
+  searchOrder
 }
