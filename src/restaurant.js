@@ -27,6 +27,30 @@ function removeMenuItem(restaurant, menuItem, menuItemType) {
   // console.log('pizzaRestaurant.menus object: ', restaurant.menus);
   // console.log('menuItemType: ', menuItemType);
   // console.log('pizzaRestaurant.menus.breakfast: ', restaurant.menus.breakfast)
+  // console.log(restaurant.menus[menuItemType][0].name) yayyyyyy! 
+  // console.log('Menu array of objects: ', restaurant.menus[menuItemType])
+  // console.log('length of menuItemType array: ', restaurant.menus[menuItemType].length)
+  if (restaurant.menus[menuItemType].length === 0) {
+    return `Sorry, we don't sell ${menuItem}, try adding a new recipe!`  
+  }
+  
+  for (var i = 0; i <= restaurant.menus[menuItemType].length; i ++) {
+    console.log('Loop Test', [i])
+    if (menuItem === restaurant.menus[menuItemType][i].name) {
+      restaurant.menus[menuItemType].splice(i, 1);
+      console.log(`This is going to be removed from the menu`)
+      return `No one is eating our ${menuItem} - it has been removed from the ${menuItemType} menu!`
+    } else {
+        return `Sorry, we don't sell ${menuItem}, try adding a new recipe!`
+    };
+    // if (restaurant.menus[menuItemType][i].name === undefined) {
+    //   // console.log(restaurant.menus[menuItemType][i].name)
+    //   return `Sorry, we don't sell ${menuItem}, try adding a new recipe!`
+    // }
+    // if restaurant.menus[menuItemType].length === 0) {
+    //   return `Sorry, we don't sell ${menuItem}, try adding a new recipe!`
+    // }
+  };
   
   // var onBreakfastMenu = restaurant.menus.breakfast.find(function isOnThisMenu(food){
   //   return  food.type === type;
@@ -38,6 +62,14 @@ function removeMenuItem(restaurant, menuItem, menuItemType) {
 
   // if (onBreakfastMenu === true) { //&& onMenu === true) {
   //   console.log('ON BREAKFAST MENU')
+
+  //this function will take in the name of the restaurant variable (an object with the keys
+  //name and menus), the name of a menu item
+  //(should be able to access at restaurantName.menus.menuItemType[i].name)
+  //and the food type (should be able to access and restaurantName.menus.menuItemType[i].type)
+
+  //if the menuItem is present in restaurant.menus.menuItemType, the object
+  // in the menuItemType should be removed (.splice)
 
 };
 
