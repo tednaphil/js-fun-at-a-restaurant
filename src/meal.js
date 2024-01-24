@@ -1,42 +1,43 @@
-function nameMenuItem(food) {
+const nameMenuItem = (food) => {
   var foodName = `Delicious ${food}`
   return foodName
 }
 
-function createMenuItem(food, priceInput, typeInput) {
+const createMenuItem = (food, price, type) => {
   var menuItem = {
       name: food,
-      price: priceInput,
-      type: typeInput
+      price,
+      type,
   }
   return menuItem
 }
 
 
-function addIngredients(ingredientInput, array) {
+const addIngredients = (ingredientInput, array) => {
   if (array.includes(ingredientInput)) {
     return array
   } else {
-  array = array.push(ingredientInput);
-  return array
-  }}
+    array.push(ingredientInput);
+    return array
+  }
+}
 
 
 
-function formatPrice(priceInput) {
+const formatPrice = (priceInput) => {
   return (`$${priceInput}`);
 }
 
-function decreasePrice(itemPrice) {
+const decreasePrice = (itemPrice) => {
   var percentageDecrease = itemPrice * .1;
   return itemPrice - percentageDecrease
 }
 
-function createRecipe(title, ingredients, dishType) {
+const createRecipe = (title, ingredients, type) => {
   return {
-    title: title,
-    ingredients: ingredients,
-    type: dishType
+    title,
+    ingredients,
+    type,
   }
   }
 
