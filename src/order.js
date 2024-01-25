@@ -27,10 +27,10 @@ function listItems(orderArray) {
 
 
 function searchOrder(orderArray, item) {
-  var x = orderArray.find(function isInOrder(order){
+  let x = orderArray.find(function isInOrder(order){
     return  order.item === item;
   })
-  if (x === undefined) {
+  if (!x) {
     return false
    } else {
     return true
