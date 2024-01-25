@@ -1,4 +1,4 @@
-function takeOrder(order, orderTypeList) {
+const takeOrder = (order, orderTypeList) => {
   if (orderTypeList.length < 3) {
     orderTypeList = orderTypeList.push(order);
   }
@@ -6,11 +6,18 @@ function takeOrder(order, orderTypeList) {
 
 
 function refundOrder(orderNumber, orderArray) {
-  for (var i = 0; i < orderArray.length; i++) {
-    if (orderArray[i].orderNumber === orderNumber) {
-      orderArray.splice(i, 1);
+  orderArray.forEach((object) => {
+    if (object.orderNumber === orderNumber) {
+      console.log(orderArray.indexOf(object))
+      orderArray.splice(orderArray.indexOf(object), 1)
     }
-  }
+  })
+
+  // for (var i = 0; i < orderArray.length; i++) {
+  //   if (orderArray[i].orderNumber === orderNumber) {
+  //     orderArray.splice(i, 1);
+  //   }
+  // }
 };
 
 
