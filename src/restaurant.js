@@ -1,6 +1,6 @@
-function createRestaurant(restaurantName) {
+function createRestaurant(name) {
   return {
-    name: restaurantName,
+    name,
     menus: {
       breakfast: [],
       lunch: [],
@@ -11,15 +11,10 @@ function createRestaurant(restaurantName) {
 
 
 function addMenuItem(restaurant, menuItem) {
-  if (menuItem.type === 'lunch' && restaurant.menus.lunch.includes(menuItem) === false) {
-    restaurant.menus.lunch.push(menuItem);
+  // console.log(restaurant.menus[menuItem.type])
+  if (!restaurant.menus[menuItem.type].includes(menuItem)) {
+    restaurant.menus[menuItem.type].push(menuItem)
   }
-  if (menuItem.type === 'breakfast' && restaurant.menus.breakfast.includes(menuItem) === false) {
-    restaurant.menus.breakfast.push(menuItem)
-  }
-  if (menuItem.type === 'dinner' && restaurant.menus.dinner.includes(menuItem) === false) {
-    restaurant.menus.dinner.push(menuItem)
-  };
 };
 
 function removeMenuItem(restaurant, menuItem, menuItemType) {
