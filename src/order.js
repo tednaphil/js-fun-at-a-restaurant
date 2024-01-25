@@ -8,26 +8,20 @@ const takeOrder = (order, orderTypeList) => {
 function refundOrder(orderNumber, orderArray) {
   orderArray.forEach((object) => {
     if (object.orderNumber === orderNumber) {
-      console.log(orderArray.indexOf(object))
       orderArray.splice(orderArray.indexOf(object), 1)
     }
   })
-
-  // for (var i = 0; i < orderArray.length; i++) {
-  //   if (orderArray[i].orderNumber === orderNumber) {
-  //     orderArray.splice(i, 1);
-  //   }
-  // }
 };
 
 
 
 function listItems(orderArray) {
-  var itemList = []
-  for (var i = 0; i < orderArray.length; i++) {
-    itemList.push(orderArray[i].item);
-    var joinedList = itemList.join(', ')
-  } return joinedList
+  let itemList = []
+  orderArray.forEach((object) => {
+    itemList.push(object.item)
+  })
+  itemList = itemList.join(', ')
+  return itemList
 };
 
 
